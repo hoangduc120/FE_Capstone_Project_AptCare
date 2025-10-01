@@ -1,7 +1,8 @@
 import { FaBuilding } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import Button from "../Button/button";
+import Button from "../Button/Button";
+import { PATH } from "../../routes/path";
 
 const Header = () => {
   return (
@@ -17,7 +18,7 @@ const Header = () => {
           </div>
         </div>
 
-        <Link to="/auth">
+        <Link to={PATH.AUTH_LOGIN}>
           <Button variant="primary" endIcon={<FaArrowRight />}>
             Đăng nhập
           </Button>
