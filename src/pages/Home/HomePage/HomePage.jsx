@@ -5,7 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
-import Button from "../../../components/Button/button";
+import Button from "../../../components/Button/Button";
+import { PATH } from "../../../routes/path";
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-surface">
@@ -22,7 +23,7 @@ const HomePage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Link to="/auth">
+            <Link to={PATH.AUTH_LOGIN}>
               <Button variant="primary" endIcon={<FaArrowRight />}>
                 Bắt đầu ngay
               </Button>
