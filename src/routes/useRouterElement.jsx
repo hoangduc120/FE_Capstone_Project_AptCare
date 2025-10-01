@@ -1,8 +1,8 @@
 import MainLayout from "../layouts/MainLayout/MainLayout";
+import HomePage from "../pages/Home/HomePage/HomePage";
 import { PATH } from "./path";
 import { useRoutes, Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage/HomePage";
-    
+
 export default function useRouterElement() {
   const element = useRoutes([
     {
@@ -12,12 +12,6 @@ export default function useRouterElement() {
         {
           index: true,
           element: <HomePage />,
-          children: [
-            {
-              index: true,
-              element: <HomePage />,
-            },
-          ],
         },
       ],
     },
