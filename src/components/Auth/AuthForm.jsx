@@ -1,22 +1,19 @@
 import {
   Box,
+  Button,
   CircularProgress,
   InputAdornment,
   Paper,
-  Tab,
-  Tabs,
   TextField,
   Typography,
 } from "@mui/material";
 import { Form, Formik } from "formik";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaBuilding, FaLock, FaUser } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import * as Yup from "yup";
-import ButtonCustom from "../Button/Button";
 
-// Schema validation
 const loginSchema = Yup.object({
   email: Yup.string().email("Email không hợp lệ").required("Bắt buộc"),
   password: Yup.string().min(6, "Tối thiểu 6 ký tự").required("Bắt buộc"),
@@ -150,19 +147,34 @@ export default function AuthForm() {
                 ),
               }}
             />
-            <ButtonCustom
+            <Button
               type="submit"
-              variant="primary"
-              size="md"
-              className="w-full"
+              variant="contained"
               disabled={isLoading}
+              fullWidth
+              sx={{
+                py: 1.5,
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                borderRadius: 2,
+                textTransform: "none",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                boxShadow: "0 4px 15px rgba(102, 126, 234, 0.4)",
+                "&:hover": {
+                  background:
+                    "linear-gradient(135deg, #764ba2 0%, #667eea 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 20px rgba(102, 126, 234, 0.5)",
+                },
+                transition: "all 0.3s ease",
+              }}
             >
               {isLoading ? (
                 <CircularProgress size={24} color="inherit" />
               ) : (
                 "Đăng nhập"
               )}
-            </ButtonCustom>
+            </Button>
           </Form>
         )}
       </Formik>
