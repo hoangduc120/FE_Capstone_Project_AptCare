@@ -5,8 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
-import Button from "../../../components/Button/Button";
 import { PATH } from "../../../routes/path";
+import { Button } from "@mui/material";
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-surface">
@@ -24,11 +24,55 @@ const HomePage = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Link to={PATH.AUTH_LOGIN}>
-              <Button variant="primary" endIcon={<FaArrowRight />}>
-                Bắt đầu ngay
+              <Button
+                variant="contained"
+                endIcon={<FaArrowRight />}
+                sx={{
+                  py: 1.5,
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  borderRadius: 2,
+                  textTransform: "none",
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  boxShadow: "0 4px 15px rgba(102, 126, 234, 0.4)",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(135deg, #764ba2 0%, #667eea 100%)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 20px rgba(102, 126, 234, 0.5)",
+                  },
+                  transition: "all 0.3s ease",
+                  maxWidth: 300,
+                }}
+              >
+                {" "}
+                Đăng nhập
               </Button>
             </Link>
-            <Button variant="outline">Tìm hiểu thêm</Button>
+            <Button
+              variant="outlined"
+              sx={{
+                py: 1.5,
+                borderRadius: 2,
+                textTransform: "none",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                borderWidth: 2,
+                borderColor: "#667eea",
+                color: "#667eea",
+                "&:hover": {
+                  borderWidth: 2,
+                  borderColor: "#764ba2",
+                  bgcolor: "rgba(102, 126, 234, 0.1)",
+                  transform: "translateY(-2px)",
+                },
+                transition: "all 0.3s ease",
+                maxWidth: 300,
+              }}
+            >
+              Tìm hiểu thêm
+            </Button>
           </div>
         </div>
       </section>
